@@ -1,19 +1,14 @@
 # coding=utf8
 
 from django.conf.urls import url
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic import RedirectView
 
-from strategy.views import (
-    BoolStrategyListView, BoolStrategyCreateView, BoolStrategyDestroyView,
-    BoolStrategyTestView, BoolStrategyDataView,
-    FreqStrategyListView, FreqStrategyCreateView, FreqStrategyDestroyView,
-    FreqStrategyTestView, FreqStrategyDataView,
-    MenuStrategyListView, MenuStrategyCreateView, MenuStrategyDestroyView,
-    MenuStrategyTestView, MenuStrategyDataView,
-    UserStrategyListView, UserStrategyCreateView, UserStrategyDestroyView,
-    UserStrategyTestView, UserStrategyDataView,
-)
+from www.strategy.views import MenuStrategyListView, MenuStrategyCreateView, MenuStrategyDestroyView, \
+    MenuStrategyTestView, MenuStrategyDataView, BoolStrategyListView, BoolStrategyCreateView, BoolStrategyDestroyView, \
+    BoolStrategyTestView, BoolStrategyDataView, FreqStrategyListView, FreqStrategyCreateView, FreqStrategyDestroyView, \
+    FreqStrategyTestView, FreqStrategyDataView, UserStrategyListView, UserStrategyCreateView, UserStrategyDestroyView, \
+    UserStrategyTestView, UserStrategyDataView
 
 urlpatterns = [
     url(r'^$',

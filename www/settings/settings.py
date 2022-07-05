@@ -1,18 +1,15 @@
 # coding=utf8
 import os
-import environ
 import importlib
+from pathlib import Path
+
+root_path = Path(os.path.dirname(__file__)).parent.parent
 
 
-p = environ.Path(__file__) - 2
-env = environ.Env()
-
-
-def root(*paths, **kwargs):
-    ensure = kwargs.pop('ensure', False)
-    path = p(*paths, **kwargs)
-    if ensure and not os.path.exists(path):
-        os.makedirs(path)
+def root(path=""):
+    final_path = f"{root_path}/{path}"
+    if not os.path.exists(final_path):
+        os.makedirs(final_path)
     return path
 
 
@@ -50,7 +47,7 @@ INSTALLED_APPS = (
     'log_manage',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

@@ -4,13 +4,13 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'', include("risk_auth.urls", namespace='risk_auth')),
-    url(r'permissions/', include("permissions.urls", namespace="permissions")),
-    url(r'strategy/', include("strategy.urls", namespace="strategy")),
-    url(r'menu/', include("menu.urls", namespace="menus")),
-    url(r'rule/', include("rule.urls", namespace="rule")),
-    url(r'config/', include("bk_config.urls", namespace="config")),
-    url(r'log_manage/', include("log_manage.urls", namespace="log_manage")),
+    url(r'', include("risk_auth.urls")),
+    url(r'permissions/', include("permissions.urls")),
+    url(r'strategy/', include("strategy.urls")),
+    url(r'menu/', include("menu.urls")),
+    url(r'rule/', include("rule.urls")),
+    url(r'config/', include("bk_config.urls")),
+    url(r'log_manage/', include("log_manage.urls")),
 ]
 
 # 用于线上时应移除此部分，动静分离

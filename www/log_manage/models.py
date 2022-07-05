@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class AuditLogModel(models.Model):
+    id = models.AutoField(primary_key=True)
     username = models.CharField(verbose_name=_(u"用户名"), max_length=64,
                                 blank=True)
     email = models.CharField(verbose_name=_(u"邮箱"), max_length=128, blank=True)

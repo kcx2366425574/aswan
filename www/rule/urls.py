@@ -1,9 +1,9 @@
 # coding=utf8
 from django.conf.urls import url
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic import RedirectView
 
-from rule.views import (RulesListView, RulesCreateView, RulesDestroyView, RulesChangeView,
+from www.rule.views import (RulesListView, RulesCreateView, RulesDestroyView, RulesChangeView,
                         RulesDetailView, RulesTestView, RulesDataView, RulesThresholdEdit,
                         RulesEdit)
 
