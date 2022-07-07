@@ -4,9 +4,10 @@ import logging
 from django.core.exceptions import PermissionDenied
 from django.urls import reverse
 from django.shortcuts import redirect
+from django.utils.deprecation import MiddlewareMixin
 
-from log_manage.signals import user_visit
-from permissions.permission import UserPermission, DBError
+from www.log_manage.signals import user_visit
+from www.permissions.permission import UserPermission, DBError
 from risk_models.lru import LRUCacheDict
 
 LOGGER = logging.getLogger(__name__)
@@ -31,7 +32,7 @@ CACHE_HAS_PERMS = LRUCacheDict(max_size=1024, expiration=CACHE_EXPIRE_TIME)
 CACHE_USER_PERMS = LRUCacheDict(max_size=100, expiration=CACHE_EXPIRE_TIME)
 
 
-class PermissionsMiddleware(object):
+class PermissionsMiddleware(MiddlewareMixin):
     @classmethod
     def process_request(cls, request, *args, **kwargs):
         user = request.user
@@ -82,7 +83,7 @@ class PermissionsMiddleware(object):
             return WHITE_LIST_URIS
 
 
-class UserAuditMiddleware(object):
+class UserAuditMiddleware(MiddlewareMixin):
     ignore_uris = [
         "/accounts/login/",
         "/accounts/logout/",

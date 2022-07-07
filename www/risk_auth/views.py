@@ -15,7 +15,7 @@ class Home(TemplateView):
 
 def risk_login(request):
     next_url = request.GET.get("next", None) or reverse("risk_auth:home")
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return redirect(next_url)
 
     if request.method == "POST":
