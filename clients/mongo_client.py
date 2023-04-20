@@ -7,7 +7,7 @@ from config import (SOC_MONGO_HOST, MONGO_POOL_SIZE, MONGO_MAX_IDLE_TIME,
 
 @lru_cache_function(max_size=1, expiration=24 * 3600)
 def _get_mongo_pool():
-    _POOL_TEMP = MongoClient(host=SOC_MONGO_HOST, maxPoolSize=MONGO_POOL_SIZE,
+    _POOL_TEMP = MongoClient(host=SOC_MONGO_HOST, maxPoolSize=MONGO_POOL_SIZE, port=27017,
                              connect=False,
                              socketKeepAlive=True,
                              maxIdleTimeMS=MONGO_MAX_IDLE_TIME,

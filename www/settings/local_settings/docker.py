@@ -7,7 +7,7 @@ DATABASES = {
         "HOST": "mysql_db",
         "PORT": 3306,
         "USER": "root",
-        "PASSWORD": "root",
+        "PASSWORD": "123456a?",
         "DATABASE_CHARSET": "utf8",
         "NAME": "risk_control",
     },

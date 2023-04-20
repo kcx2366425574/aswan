@@ -3,9 +3,9 @@
 import re
 import json
 from django import forms
-from django.utils.translation import ugettext_lazy as _
-from core.forms import BaseFilterForm, BaseForm
-from core.redis_client import get_redis_client
+from django.utils.translation import gettext_lazy as _
+from www.core.forms import BaseFilterForm, BaseForm
+from www.core.redis_client import get_redis_client
 
 
 class SourceMapForm(BaseForm):
